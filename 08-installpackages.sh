@@ -10,7 +10,7 @@ else
     dnf list installed mysql 
     if [ $? -ne 0 ]
     then
-        dnf install mysql -y
+        dnf install mysqllll -y
         if [ $? -ne 0 ]
         then
             echo " Installation of Mysql is .... Failure"
