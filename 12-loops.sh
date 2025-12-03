@@ -25,6 +25,7 @@ VALIDATE() {
        exit 1
     else
         echo " Installating of  $package is Success " 
+    fi 
 }
 
 for Package in $@
