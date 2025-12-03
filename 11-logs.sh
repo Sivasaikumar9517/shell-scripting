@@ -11,7 +11,7 @@ Y="\e[33m"
 LOGS_FOLDER="/var/log/shellscript-logs"
 FILE_NAME=$( echo $0 | cut -d "." -f1 )
 TIME_STAMP=$( date +%Y-%m-%d-%H-%M-%S )
-LOG_FILE_NAME="$LOGS_FOLDER/$FILE_NAME-$TIMESTAMP.log"
+LOG_FILE_NAME="$LOGS_FOLDER/$FILE_NAME-$TIME_STAMP.log"
 
 
 
