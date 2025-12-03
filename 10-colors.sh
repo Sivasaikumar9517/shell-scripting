@@ -43,6 +43,6 @@ then
     VALIDATE $? "Installing $PACKAGE2 is "
      
 else
-    echo -e " $PACKAGE2 Package is $Y Already Installed"
+    echo -e " $PACKAGE2 Package is $Y "
 fi
 
