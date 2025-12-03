@@ -2,6 +2,7 @@
 
 USERID=$(id -u)
 PACKAGE=$1
+PACKAGE2=$2
 
 VALIDATE() {
     if [ $1 -ne 0 ]
@@ -28,5 +29,16 @@ then
      
 else
     echo " $PACKAGE Package is Already Installed"
+fi
+
+dnf list installed $PACKAGE2
+
+if [ $? -ne 0 ]
+then
+    dnf install $PACKAGE2 -y
+    VALIDATE $? "Installing $PACKAGE2 is "
+     
+else
+    echo " $PACKAGE2 Package is Already Installed"
 fi
 
