@@ -7,6 +7,7 @@ PACKAGE2=$2
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
+N="\e[0m"
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 FILE_NAME=$( echo $0 | cut -d "." -f1 )
@@ -18,10 +19,10 @@ LOG_FILE_NAME="$LOGS_FOLDER/$FILE_NAME-$TIME_STAMP.log"
 VALIDATE() {
     if [ $1 -ne 0 ]
     then
-        echo -e " $2 ..... $R FAILURE"
+        echo -e " $2 ..... $R FAILURE $N"
         exit 1
     else
-        echo -e " $2 ..... $G SUCCESS"
+        echo -e " $2 ..... $G SUCCESS $N"
     fi
 }
 
@@ -41,10 +42,10 @@ then
     VALIDATE $? "Installing $PACKAGE is "
      
 else
-    echo -e " $PACKAGE Package is $Y Already  INSTALLED"
+    echo -e " $PACKAGE Package is $Y Already  INSTALLED $N"
 fi
 
-dnf list installed $PACKAGE2
+dnf list installed $PACKAGE2 &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then
@@ -52,6 +53,6 @@ then
     VALIDATE $? "Installing $PACKAGE2 is "
      
 else
-    echo -e " $PACKAGE2 Package is $Y Already Installed"
+    echo -e " $PACKAGE2 Package is $Y Already Installed $N"
 fi
 
