@@ -13,7 +13,7 @@ VALIDATE() {
     fi
 }
 
-if [ USERID -ne 0 ]
+if [ $USERID -ne 0 ]
 then
     echo "ERROR: User must have root privilages to execute this script "
     exit 1
