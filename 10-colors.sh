@@ -4,17 +4,17 @@ USERID=$(id -u)
 PACKAGE=$1
 PACKAGE2=$2
 
-R=\e[31m
-G=\e[32m
-Y=\e[33m
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
 
 VALIDATE() {
     if [ $1 -ne 0 ]
     then
-        echo -e " $2 ..... $R"
+        echo -e " $2 ..... $R FAILURE"
         exit 1
     else
-        echo -e " $2 ..... $G"
+        echo -e " $2 ..... $G SUCCESS"
     fi
 }
 
@@ -32,7 +32,7 @@ then
     VALIDATE $? "Installing $PACKAGE is "
      
 else
-    echo -e " $PACKAGE Package is Already $Y"
+    echo -e " $PACKAGE Package is $Y Already  INSTALLED"
 fi
 
 dnf list installed $PACKAGE2
@@ -43,6 +43,6 @@ then
     VALIDATE $? "Installing $PACKAGE2 is "
      
 else
-    echo -e " $PACKAGE2 Package is Already $Y"
+    echo -e " $PACKAGE2 Package is $Y Already Installed"
 fi
 
