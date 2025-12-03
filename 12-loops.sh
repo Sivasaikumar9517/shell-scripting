@@ -21,10 +21,10 @@ fi
 VALIDATE() {
     if [ $1 -ne 0 ]
     then
-       echo " Installating of  $package is Failure " 
+       echo " $2 is Failure " 
        exit 1
     else
-        echo " Installating of  $package is Success " 
+        echo " $2 is Success " 
     fi 
 }
 
