@@ -33,11 +33,11 @@ then
     exit 1
 fi 
 
-dnf list installed $PACKAGE -&>>$LOG_FILE_NAME
+dnf list installed $PACKAGE &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then
-    dnf install $PACKAGE -y -&>>$LOG_FILE_NAME
+    dnf install $PACKAGE -y &>>$LOG_FILE_NAME
     VALIDATE $? "Installing $PACKAGE is "
      
 else
@@ -48,7 +48,7 @@ dnf list installed $PACKAGE2
 
 if [ $? -ne 0 ]
 then
-    dnf install $PACKAGE2 -y -&>>$LOG_FILE_NAME
+    dnf install $PACKAGE2 -y &>>$LOG_FILE_NAME
     VALIDATE $? "Installing $PACKAGE2 is "
      
 else
