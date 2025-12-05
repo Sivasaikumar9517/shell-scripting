@@ -18,7 +18,7 @@ else
     echo " AWS Cli is already installed "
 fi
 
-if [ ! -d "~/.aws" ] 
+if [ ! -d ~/.aws ] 
 then
     echo " AWS Cli is not configured . Please configurethe AWS Cli and try again... "
     exit 1
