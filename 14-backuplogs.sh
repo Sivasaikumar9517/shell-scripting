@@ -18,7 +18,7 @@ mkdir -p /home/ec2-user/app-logs
 
 if [ $# -lt 2 ]
 then
-    echo -e " $R USAGE:: $N sh $0.sh <SOUR_DIR> <DEST_DIR> <DAYS(OPTIONAL)> "
+    echo -e " $R USAGE:: $N sh $0 <SOUR_DIR> <DEST_DIR> <DAYS(OPTIONAL)> "
     exit 1
 fi
 
