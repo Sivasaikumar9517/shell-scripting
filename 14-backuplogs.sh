@@ -22,13 +22,13 @@ then
     exit 1
 fi
 
-if [ ! -d "$SOUR_DIR"]
+if [ ! -d "$SOUR_DIR" ]
 then
     echo -e " $R $SOUR_DIR $N doesn't exists ... please check"
     exit 1
 fi
 
-if [ ! -d "$DEST_DIR"]
+if [ ! -d "$DEST_DIR" ]
 then
     echo -e " $R $DEST_DIR $N doesn't exists ... please check"
     exit 1
