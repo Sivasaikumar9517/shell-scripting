@@ -26,62 +26,62 @@ fi
 
 
 # List the resources based on the service
-case $aws_service in
+case $AWS_RESOURCE in
     ec2)
-        echo "Listing EC2 Instances in $aws_region"
-        aws ec2 describe-instances --region $aws_region
+        echo "Listing EC2 Instances in $AWS_REGION"
+        aws ec2 describe-instances --region $AWS_REGION
         ;;
     rds)
-        echo "Listing RDS Instances in $aws_region"
-        aws rds describe-db-instances --region $aws_region
+        echo "Listing RDS Instances in $AWS_REGION"
+        aws rds describe-db-instances --region $AWS_REGION
         ;;
     s3)
-        echo "Listing S3 Buckets in $aws_region"
-        aws s3api list-buckets --region $aws_region
+        echo "Listing S3 Buckets in $AWS_REGION"
+        aws s3api list-buckets --region $AWS_REGION
         ;;
     cloudfront)
-        echo "Listing CloudFront Distributions in $aws_region"
-        aws cloudfront list-distributions --region $aws_region
+        echo "Listing CloudFront Distributions in $AWS_REGION"
+        aws cloudfront list-distributions --region $AWS_REGION
         ;;
     vpc)
-        echo "Listing VPCs in $aws_region"
-        aws ec2 describe-vpcs --region $aws_region
+        echo "Listing VPCs in $AWS_REGION"
+        aws ec2 describe-vpcs --region $AWS_REGION
         ;;
     iam)
-        echo "Listing IAM Users in $aws_region"
-        aws iam list-users --region $aws_region
+        echo "Listing IAM Users in $AWS_REGION"
+        aws iam list-users --region $AWS_REGION
         ;;
     route5)
-        echo "Listing Route53 Hosted Zones in $aws_region"
-        aws route53 list-hosted-zones --region $aws_region
+        echo "Listing Route53 Hosted Zones in $AWS_REGION"
+        aws route53 list-hosted-zones --region $AWS_REGION
         ;;
     cloudwatch)
-        echo "Listing CloudWatch Alarms in $aws_region"
-        aws cloudwatch describe-alarms --region $aws_region
+        echo "Listing CloudWatch Alarms in $AWS_REGION"
+        aws cloudwatch describe-alarms --region $AWS_REGION
         ;;
     cloudformation)
-        echo "Listing CloudFormation Stacks in $aws_region"
-        aws cloudformation describe-stacks --region $aws_region
+        echo "Listing CloudFormation Stacks in $AWS_REGION"
+        aws cloudformation describe-stacks --region $AWS_REGION
         ;;
     lambda)
-        echo "Listing Lambda Functions in $aws_region"
-        aws lambda list-functions --region $aws_region
+        echo "Listing Lambda Functions in $AWS_REGION"
+        aws lambda list-functions --region $AWS_REGION
         ;;
     sns)
-        echo "Listing SNS Topics in $aws_region"
-        aws sns list-topics --region $aws_region
+        echo "Listing SNS Topics in $AWS_REGION"
+        aws sns list-topics --region $AWS_REGION
         ;;
     sqs)
-        echo "Listing SQS Queues in $aws_region"
-        aws sqs list-queues --region $aws_region
+        echo "Listing SQS Queues in $AWS_REGION"
+        aws sqs list-queues --region $AWS_REGION
         ;;
     dynamodb)
-        echo "Listing DynamoDB Tables in $aws_region"
-        aws dynamodb list-tables --region $aws_region
+        echo "Listing DynamoDB Tables in $AWS_REGION"
+        aws dynamodb list-tables --region $AWS_REGION
         ;;
     ebs)
-        echo "Listing EBS Volumes in $aws_region"
-        aws ec2 describe-volumes --region $aws_region
+        echo "Listing EBS Volumes in $AWS_REGION"
+        aws ec2 describe-volumes --region $AWS_REGION
         ;;
     *)
         echo "Invalid service. Please enter a valid service."
