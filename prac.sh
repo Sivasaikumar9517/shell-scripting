@@ -18,14 +18,31 @@ VALIDATE(){
     fi
 }
 
+dnf list installed mysql
+if [ $? -ne 0 ]
+then
+    dnf install mysql -y
+    VALIDATE $? mysql
+else
+    echo " Mysql is Already Installed .... Skipping"
+fi
 
-dnf install mysql -y
-VALIDATE $? mysql
+dnf list installed nginx
+if [ $? -ne 0 ]
+then
+    dnf install nginx -y
+    VALIDATE $? nginx
+else
+    echo " nginx is Already Installed .... Skipping"
+fi
 
-dnf install nginx -y
-VALIDATE $? nginx
-
-dnf install gcc -y
-VALIDATE $? gcc
+dnf list installed gcc
+if [ $? -ne 0 ]
+then
+    dnf install gcc -y
+    VALIDATE $? gcc
+else
+    echo " gcc is Already Installed .... Skipping"
+fi
 
 
