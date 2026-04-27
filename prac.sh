@@ -57,4 +57,6 @@ else
     echo -e " gcc is Already Installed .... $Y Skipping $N" | tee -a $LOG_FILE_NAME
 fi
 
+#done
+
 
